@@ -15,7 +15,7 @@ public class ClassInfo {
      * Определяет, является ли данный объект интерфейсом
      * @param cls имя класса, котрый нужно проверить
      * @return {@code true} если объект является интерфейсом, иначе {@code false}
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException если класс не найден
      */
     public static boolean isInterface(String cls) throws ClassNotFoundException {
         return Class.forName(cls).isInterface();
@@ -26,7 +26,7 @@ public class ClassInfo {
      * данный класс {@code cls} интерфейс  {@code marker}
      * @param cls класс для проверки
      * @param marker интерфейс, который мог бы реализовывать данный класс {@code cls}
-     * @return {@code true} если {@code marker} является интерфейсом и {@code cls} реализует этот интерфейс,
+     * @return {@code true} если {@code marker} является интерфейсом и {@code cls} реализует этот интерфейс
      * иначе {@code false}
      */
     public static boolean isInterfaceImplemented(Class<?> cls, Class<?> marker){
@@ -38,8 +38,8 @@ public class ClassInfo {
      * данный класс {@code cls} интерфейс  {@code marker}
      * @param cls имя класса для проверки
      * @param marker имя интерфейса, который мог бы реализовывать данный класс {@code cls}
-     * @return
-     * @throws ClassNotFoundException
+     * @return  {@code true} если {@code marker} является интерфейсом и {@code cls} реализует этот интерфейс
+     * @throws ClassNotFoundException если какой-то из классов не найден
      */
     public static boolean isInterfaceImplemented(String cls, String marker) throws ClassNotFoundException {
         Class<?> cls1 = Class.forName(cls);
